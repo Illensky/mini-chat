@@ -1,5 +1,6 @@
 const sendMessage = document.querySelector('#send-message');
 const chatDiv = document.querySelector('#chatDiv');
+const messageInput = document.querySelector('#message');
 
 if (sendMessage) {
 
@@ -8,12 +9,13 @@ if (sendMessage) {
         fetch('/?c=message', {
             method: 'POST',
             body: JSON.stringify({
-                message: document.querySelector('#message').value
+                message: messageInput.value
             })
         })
             .then(response => response.json())
             .then(response => {
                 refreshChat(response);
+                messageInput.value = '';
             })
     });
 
@@ -27,12 +29,13 @@ if (sendMessage) {
             fetch('/?c=message', {
                 method: 'POST',
                 body: JSON.stringify({
-                    message: document.querySelector('#message').value
+                    message: messageInput.value
                 })
             })
                 .then(response => response.json())
                 .then(response => {
                     refreshChat(response);
+                    messageInput.value = '';
                 })
 
         }
