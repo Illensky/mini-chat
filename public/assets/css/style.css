@@ -1,0 +1,172 @@
+/*Some variable for colors and sizes*/
+:root {
+    --error-color : indianred;
+    --success-color : mediumseagreen;
+    --main-text-color : white;
+    --main-bg-color : black;
+    --second-bg-color : grey;
+    --item-bg-color : darkgray;
+    --border-color : grey;
+    --footer-height : 5vh;
+}
+
+/*Basic css reset*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*body style*/
+
+body {
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    min-height: 100vh;
+    position: relative;
+}
+
+/*Header / navBar style*/
+
+header {
+    background-color: var(--item-bg-color);
+    padding: 20px;
+}
+
+header > nav > ul {
+    display: flex;
+}
+
+header > nav > ul > li {
+    list-style-type: none;
+    padding-left: 2px;
+}
+
+header > nav > ul > li:hover {
+    transform: scale(1.1);
+}
+
+header > nav > ul > li > a {
+    text-decoration: none;
+    color: var(--main-text-color);
+    background-color: var(--main-bg-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+header > nav > ul > li > a:hover {
+    text-decoration: none;
+}
+
+/*Main container style*/
+main {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: var(--footer-height);
+}
+
+/*Footer style*/
+
+footer {
+    background-color: var(--item-bg-color);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: var(--footer-height);
+}
+
+/*Links style*/
+
+a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*Chat style*/
+
+#chatDiv {
+    height: 500px;
+    width: 50vw;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: auto;
+}
+
+#chatDiv > div {
+    background-color: var(--second-bg-color);
+    width: 60%;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#chatDiv > div:nth-child(even) {
+    align-self: end;
+    background-color: darkgray;
+}
+
+#message {
+    width: 30vw;
+    height: 10vh;
+}
+
+#send-message {
+    width: 20vw;
+    height: 5vh;
+    background-color: var(--second-bg-color);
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+}
+/*Forms style*/
+
+input, label {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > div {
+    padding: 15px;
+}
+
+form > div > label {
+    padding: 5px;
+}
+
+/*Alert Message style*/
+
+.alert {
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.alert-error {
+    background-color: var(--error-color);
+}
+
+.alert-success {
+    background-color: var(--success-color);
+}
